@@ -32,7 +32,7 @@ public class Customer extends User {
            this.address = builder.address;
            this.firstName = builder.firstName;
            this.lastName = builder.lastName;
-           this.identificationNumber = Long.parseLong(builder.identificationNumber);
+           this.identificationNumber = builder.identificationNumber;
            this.cellPhone = Long.parseLong(builder.cellPhone);
            this.email = builder.email;
            this.password = builder.password;
@@ -104,7 +104,7 @@ public class Customer extends User {
         private Address address;
         private String firstName;
         private String lastName;
-        private String identificationNumber;
+        private long identificationNumber;
         private String cellPhone;
         private String email;
         private String password;
@@ -159,7 +159,7 @@ public class Customer extends User {
             return this;
         }
 
-        public Builder setIdentificationNumber(String identificationNumber) {
+        public Builder setIdentificationNumber(long identificationNumber) {
             this.identificationNumber = identificationNumber;
             return this;
         }
@@ -190,7 +190,7 @@ public class Customer extends User {
             this.address = customer.address;
             this.firstName = customer.firstName;
             this.lastName = customer.lastName;
-            this.identificationNumber = String.valueOf(customer.identificationNumber);
+            this.identificationNumber = customer.identificationNumber;
             this.cellPhone = String.valueOf(customer.cellPhone);
             this.email = customer.email;
             this.password = customer.password;
