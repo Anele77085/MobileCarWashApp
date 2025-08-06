@@ -11,20 +11,20 @@ import java.time.LocalDateTime;
 public class Booking {
 
     private String bookingId;
-    private String userId;
+    private String customerId;
     private int serviceId;
     private LocalDateTime scheduledTime;
-    private String location;
+    private Paymenent payment;
 
-    public Booking() {
+    private Booking() {
     }
 
-    public Booking(Builder builder) {
+    private Booking(Builder builder) {
         this.bookingId = builder.bookingId;
-        this.userId = builder.userId;
+        this.customerId = builder.customerId;
         this.serviceId = builder.serviceId;
         this.scheduledTime = builder.scheduledTime;
-        this.location = builder.location;
+        this.payment = builder.payment;
 
 
     }
@@ -33,8 +33,8 @@ public class Booking {
         return bookingId;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getCustomerId() {
+        return customerId;
     }
 
     public int getServiceId() {
@@ -45,35 +45,36 @@ public class Booking {
         return scheduledTime;
     }
 
-    public String getLocation() {
-        return location;
+    public Payment getPayment(){
+        return payment;
     }
+
 
     @Override
     public String toString() {
         return "Booking{" +
                 "bookingId='" + bookingId + '\'' +
-                ", userId='" + userId + '\'' +
+                ", userId='" + customerId + '\'' +
                 ", serviceId=" + serviceId +
                 ", scheduledTime=" + scheduledTime +
-                ", location='" + location + '\'' +
+                ", payment=" + payment +
                 '}';
     }
 
     public static class Builder {
         private String bookingId;
-        private String userId;
+        private String customerId;
         private int serviceId;
         private LocalDateTime scheduledTime;
-        private String location;
+        private Payment payment;
 
         public Builder setBookingId(String bookingId) {
             this.bookingId = bookingId;
             return this;
         }
 
-        public Builder setUserId(String userId) {
-            this.userId = userId;
+        public Builder setCustomerId(String customerId) {
+            this.customerId = customerId;
             return this;
         }
 
@@ -87,20 +88,23 @@ public class Booking {
             return this;
         }
 
-        public Builder setLocation(String location) {
-            this.location = location;
+        public Builder setPayment(Payment payment){
+            this.payment = payment;
             return this;
         }
 
+
         public Builder copy(Booking booking) {
             this.bookingId = booking.bookingId;
-            this.userId = booking.userId;
+            this.customerId = booking.customerId;
             this.serviceId = booking.serviceId;
             this.scheduledTime = booking.scheduledTime;
-            this.location = booking.location;
+            this.payment = booking.payment;
             return this;
         }
-      public Booking build() { return new Booking(this); }
+
+      public Booking build() {
+            return new Booking(this); }
   }
 }
 
