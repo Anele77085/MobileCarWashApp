@@ -15,7 +15,7 @@ public class Address {
     private short postalCode;
 
     private Address(){
-        //Constructor//
+        //Constructor
 
     }
 
