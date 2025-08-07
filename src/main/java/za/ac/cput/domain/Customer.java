@@ -19,7 +19,7 @@ public class Customer extends User {
 
     private Customer(){
 
-        //Constructor//
+        //Constructor
 
     }
 
